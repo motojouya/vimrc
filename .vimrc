@@ -32,13 +32,15 @@ Plug 'junegunn/vim-easy-align'
 Plug 'airblade/vim-rooter'
 Plug 'mattn/vim-sl'
 Plug 'scrooloose/nerdtree'
+Plug 'sjl/badwolf'
 call plug#end()
 
 """ colorscheme """
 " colorscheme molokai
-colorscheme lucario
+" colorscheme lucario
 " colorscheme desert
 " colorscheme kalisi
+colorscheme badwolf
 
 " let loaded_matchparen = 1 " 括弧の対応ハイライトoff
 " Required:
