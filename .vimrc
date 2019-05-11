@@ -16,6 +16,7 @@ set nosmarttab
 call plug#begin('~/.vim/plugged')
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'w0rp/ale'
+Plug 'kamykn/spelunker.vim'
 Plug 'prabirshrestha/async.vim'
 Plug 'prabirshrestha/vim-lsp'
 Plug 'prabirshrestha/asyncomplete.vim'
@@ -167,19 +168,31 @@ set nowritebackup
 set backupcopy=yes
 
 """ command """
+set spell
+set spelllang=en,cjk
+set nospell
+
+function! DeleteSpelunkerMatchs()
+  if !exists('b:match_id_dict')
+    let b:match_id_dict = {}
+  endif
+  for v in values(b:match_id_dict)
+    call matchdelete(v)
+  endfor
+  let b:match_id_dict = {}
+endfunction
 
 function! Ale()
   call lsp#disable()
-  set spell
-  set spelllang=en,cjk
-  " ale#ALEEnable
+  let g:enable_spelunker_vim = 1
+  call spelunker#check()
   call ale#toggle#Enable()
 endfunction
 
 function! Lsp()
-  set nospell
-  " ale#ALEDisable
   call ale#toggle#Disable()
+  let g:enable_spelunker_vim = 0
+  call DeleteSpelunkerMatchs()
   call lsp#enable()
 endfunction
 
