@@ -14,7 +14,7 @@ set expandtab
 set nosmarttab
 
 call plug#begin('~/.vim/plugged')
-Plug 'ctrlpvim/ctrlp.vim'
+" Plug 'ctrlpvim/ctrlp.vim'
 Plug 'w0rp/ale'
 Plug 'kamykn/spelunker.vim'
 Plug 'prabirshrestha/async.vim'
@@ -22,20 +22,23 @@ Plug 'prabirshrestha/vim-lsp'
 Plug 'prabirshrestha/asyncomplete.vim'
 Plug 'prabirshrestha/asyncomplete-lsp.vim'
 Plug 'othree/yajs.vim'
-Plug 'leafgarland/typescript-vim'
+" Plug 'leafgarland/typescript-vim'
 Plug 'MaxMEllon/vim-jsx-pretty'
 Plug 'posva/vim-vue'
-Plug 'Quramy/tsuquyomi'
+" Plug 'Quramy/tsuquyomi'
 Plug 'tomasr/molokai'
 Plug 'raphamorim/lucario'
 Plug 'freeo/vim-kalisi'
 Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-fugitive'
+Plug '~/.fzf'
+Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-easy-align'
 Plug 'airblade/vim-rooter'
 Plug 'mattn/vim-sl'
 Plug 'scrooloose/nerdtree'
 Plug 'sjl/badwolf'
+Plug 'mattn/vim-starwars'
 call plug#end()
 
 """ colorscheme """
@@ -106,21 +109,21 @@ endif
 "       \ }
 let g:ale_enabled = 0
 
-""" ctrlp """
-let g:ctrlp_cache_dir = $HOME.'/.cache/ctrlp' " キャッシュディレクトリ
-let g:ctrlp_clear_cache_on_exit = 0 " キャッシュを終了時に削除しない
-let g:ctrlp_lazy_update = 200 " 遅延再描画
-let g:ctrlp_root_markers = ['.git', 'docker-compose.yml', 'docker-compose.yaml'] " ルートパスと認識させるためのファイル
-let g:ctrlp_max_height = 20 " CtrlPのウィンドウ最大高さ
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.jpg,*.png " 無視するディレクトリ
-let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/](\.git|\.hg|\.svn|node_modules|vendor)$',
-  \ 'file': '\v\.(exe|so|dll)$',
-  \ 'link': 'some_bad_symbolic_links',
-  \ }
-" let g:ctrlp_custom_ignore = '\v[\/](node_modules|target|dist)|(\.(swp|ico|git|svn))$'
-" let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
-let g:ctrlp_use_migemo = 0
+" """ ctrlp """
+" let g:ctrlp_cache_dir = $HOME.'/.cache/ctrlp' " キャッシュディレクトリ
+" let g:ctrlp_clear_cache_on_exit = 0 " キャッシュを終了時に削除しない
+" let g:ctrlp_lazy_update = 200 " 遅延再描画
+" let g:ctrlp_root_markers = ['.git', 'docker-compose.yml', 'docker-compose.yaml'] " ルートパスと認識させるためのファイル
+" let g:ctrlp_max_height = 20 " CtrlPのウィンドウ最大高さ
+" set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.jpg,*.png " 無視するディレクトリ
+" let g:ctrlp_custom_ignore = {
+"   \ 'dir':  '\v[\/](\.git|\.hg|\.svn|node_modules|vendor)$',
+"   \ 'file': '\v\.(exe|so|dll)$',
+"   \ 'link': 'some_bad_symbolic_links',
+"   \ }
+" " let g:ctrlp_custom_ignore = '\v[\/](node_modules|target|dist)|(\.(swp|ico|git|svn))$'
+" " let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
+" let g:ctrlp_use_migemo = 0
 
 """ この設定なにか忘れた """
 augroup MyXML
