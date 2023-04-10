@@ -72,6 +72,18 @@ endif
 " let g:asyncomplete_log_file = expand('~/asyncomplete.log')
 let g:lsp_log_file = expand('~/vim-lsp.log')
 let g:lsp_diagnostics_enabled = 0
+" additional options. but i think it isnt need
+let g:lsp_diagnostics_enabled = 0
+let g:lsp_signature_help_enabled = 0
+let g:lsp_document_highlight_enabled = 0
+let g:lsp_document_code_action_signs_enabled = 0
+let g:lsp_semantic_enabled = 0
+let g:lsp_show_message_request_enabled = 0
+let g:lsp_show_message_log_level = 0
+let g:lsp_work_done_progress_enabled = 0
+let g:lsp_completion_documentation_enabled = 0
+let g:lsp_untitled_buffer_enabled = 0
+" additional options end.
 if executable('typescript-language-server')
     au User lsp_setup call lsp#register_server({
       \ 'name': 'javascript support using typescript-language-server',
@@ -203,7 +215,9 @@ endfunction
 function! Lsp()
   call ale#toggle#Disable()
   let g:enable_spelunker_vim = 0
-  call DeleteSpelunkerMatchs()
+  " call DeleteSpelunkerMatchs()
+  call spelunker#matches#clear_matches()
+  call spelunker#matches#clear_current_buffer_matches()
   call lsp#enable()
 endfunction
 
