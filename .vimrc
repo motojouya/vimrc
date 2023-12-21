@@ -83,6 +83,7 @@ let g:lsp_show_message_log_level = 0
 let g:lsp_work_done_progress_enabled = 0
 let g:lsp_completion_documentation_enabled = 0
 let g:lsp_untitled_buffer_enabled = 0
+let g:lsp_inlay_hints_enabled = 0
 " additional options end.
 if executable('typescript-language-server')
     au User lsp_setup call lsp#register_server({
@@ -233,8 +234,9 @@ function! Lsp()
   call lsp#enable()
 endfunction
 
-command! -nargs=0 -complete=file ALEmode call Ale()
-command! -nargs=0 -complete=file LSPmode call Lsp()
+"  -complete=file
+command! -nargs=0 ALEmode call Ale()
+command! -nargs=0 LSPmode call Lsp()
 
 LSPmode
 
