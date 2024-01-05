@@ -25,6 +25,7 @@ Plug 'othree/yajs.vim'
 " Plug 'leafgarland/typescript-vim'
 Plug 'MaxMEllon/vim-jsx-pretty'
 Plug 'posva/vim-vue'
+Plug 'hashivim/vim-terraform' , { 'for': 'terraform'}
 " Plug 'Quramy/tsuquyomi'
 Plug 'tomasr/molokai'
 Plug 'raphamorim/lucario'
@@ -99,6 +100,13 @@ if executable('typescript-language-server')
       \ 'whitelist': ['typescript', 'typescript.tsx'],
       \ })
 endif
+" if executable('terraform-lsp')
+"   au User lsp_setup call lsp#register_server({
+"     \ 'name': 'terraform-lsp',
+"     \ 'cmd': {server_info->['terraform-lsp']},
+"     \ 'whitelist': ['terraform','tf'],
+"     \ })
+" endif
 " if executable('docker-langserver')
 "     au User lsp_setup call lsp#register_server({
 "         \ 'name': 'docker-langserver',
