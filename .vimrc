@@ -167,6 +167,8 @@ set statusline=\ %M%n\ %<%f\ %R%H%W\ %{'['.(&fenc!=''?&fenc:&enc).','.&fileforma
 set listchars=tab:~`,trail:^,extends:>,precedes:<,nbsp:% " どの文字でタブや改行を表示するかを設定
 set colorcolumn=81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100 " 81から100行目までを色つけ。文字制限をする気持ち
 
+set belloff=all
+
 " 全角スペースのハイライト
 function! ZenkakuSpace()
     highlight ZenkakuSpace cterm=underline ctermfg=lightblue guibg=darkgray
