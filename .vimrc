@@ -40,6 +40,7 @@ Plug 'mattn/vim-sl'
 Plug 'scrooloose/nerdtree'
 Plug 'sjl/badwolf'
 Plug 'mattn/vim-starwars'
+Plug 'vim-scripts/taglist.vim'
 call plug#end()
 
 """ colorscheme """
@@ -129,6 +130,10 @@ let g:ale_linters = {
       \ 'javascript': ['eslint'],
       \ }
 let g:ale_enabled = 0
+
+" taglist.vim
+let Tlist_Show_One_File = 1
+let g:tlist_php_settings = 'php;c:class;d:constant;f:function'
 
 " """ ctrlp """
 " let g:ctrlp_cache_dir = $HOME.'/.cache/ctrlp' " キャッシュディレクトリ
