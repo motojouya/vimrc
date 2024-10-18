@@ -35,5 +35,8 @@ function _random_symbol() {
     echo -en "${symbols[$(($RANDOM % ${#symbols[@]}))]}"
 }
 
+alias gp='git push origin $(git branch --show-current)'
+alias gpf='git push origin $(git branch --show-current) --force-with-lease'
+
 PS1="$(_random_symbol) "
 
