@@ -21,6 +21,7 @@ Plug 'prabirshrestha/async.vim'
 Plug 'prabirshrestha/vim-lsp'
 Plug 'prabirshrestha/asyncomplete.vim'
 Plug 'prabirshrestha/asyncomplete-lsp.vim'
+Plug 'mattn/vim-lsp-settings'
 Plug 'othree/yajs.vim'
 " Plug 'leafgarland/typescript-vim'
 Plug 'MaxMEllon/vim-jsx-pretty'
@@ -88,20 +89,20 @@ let g:lsp_completion_documentation_enabled = 0
 let g:lsp_untitled_buffer_enabled = 0
 let g:lsp_inlay_hints_enabled = 0
 " additional options end.
-if executable('typescript-language-server')
-    au User lsp_setup call lsp#register_server({
-      \ 'name': 'javascript support using typescript-language-server',
-      \ 'cmd': { server_info->[&shell, &shellcmdflag, 'typescript-language-server --stdio']},
-      \ 'root_uri': { server_info->lsp#utils#path_to_uri(lsp#utils#find_nearest_parent_directory(lsp#utils#get_buffer_path(), '.git/..'))},
-      \ 'whitelist': ['javascript', 'javascript.jsx']
-      \ })
-    au User lsp_setup call lsp#register_server({
-      \ 'name': 'typescript-language-server',
-      \ 'cmd': { server_info->[&shell, &shellcmdflag, 'typescript-language-server --stdio']},
-      \ 'root_uri': { server_info->lsp#utils#path_to_uri(lsp#utils#find_nearest_parent_file_directory(lsp#utils#get_buffer_path(), 'tsconfig.json'))},
-      \ 'whitelist': ['typescript', 'typescript.tsx'],
-      \ })
-endif
+" if executable('typescript-language-server')
+"     au User lsp_setup call lsp#register_server({
+"       \ 'name': 'javascript support using typescript-language-server',
+"       \ 'cmd': { server_info->[&shell, &shellcmdflag, 'typescript-language-server --stdio']},
+"       \ 'root_uri': { server_info->lsp#utils#path_to_uri(lsp#utils#find_nearest_parent_directory(lsp#utils#get_buffer_path(), '.git/..'))},
+"       \ 'whitelist': ['javascript', 'javascript.jsx']
+"       \ })
+"     au User lsp_setup call lsp#register_server({
+"       \ 'name': 'typescript-language-server',
+"       \ 'cmd': { server_info->[&shell, &shellcmdflag, 'typescript-language-server --stdio']},
+"       \ 'root_uri': { server_info->lsp#utils#path_to_uri(lsp#utils#find_nearest_parent_file_directory(lsp#utils#get_buffer_path(), 'tsconfig.json'))},
+"       \ 'whitelist': ['typescript', 'typescript.tsx'],
+"       \ })
+" endif
 " if executable('terraform-lsp')
 "   au User lsp_setup call lsp#register_server({
 "     \ 'name': 'terraform-lsp',
