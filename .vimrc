@@ -172,6 +172,7 @@ set list " タブや改行
 set statusline=\ %M%n\ %<%f\ %R%H%W\ %{'['.(&fenc!=''?&fenc:&enc).','.&fileformat.']'}%=%c@%l/%L\ [%B] " ステータスラインの表示
 set listchars=tab:~`,trail:^,extends:>,precedes:<,nbsp:% " どの文字でタブや改行を表示するかを設定
 set colorcolumn=81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100 " 81から100行目までを色つけ。文字制限をする気持ち
+set hlsearch
 
 set belloff=all
 
@@ -218,6 +219,12 @@ nnoremap : ;
 " inotifyでコードを監視するときに、そのままだとMOVE_SELFイベントが走ってしまい、変更が検知できないが、それを防ぐ設定
 set nowritebackup
 set backupcopy=yes
+
+""" copilot """
+inoremap <silent><script><expr> <C-i> copilot#Accept("\<CR>")
+let g:copilot_no_tab_map = v:true
+inoremap <silent> <C-o> <Plug>(copilot-next)
+inoremap <silent> <C-p> <Plug>(copilot-previous)
 
 """ command """
 set spell
