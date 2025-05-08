@@ -40,3 +40,5 @@ alias gpf='git push origin $(git branch --show-current) --force-with-lease'
 
 PS1="$(_random_symbol) "
 
+export PATH=$PATH:$HOME/go/bin
+
