@@ -37,6 +37,7 @@ function _random_symbol() {
 
 alias gp='git push origin $(git branch --show-current)'
 alias gpf='git push origin $(git branch --show-current) --force-with-lease'
+alias ev='ps aux | grep vim'
 
 PS1="$(_random_symbol) "
 
