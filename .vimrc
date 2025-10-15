@@ -38,6 +38,8 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-easy-align'
 Plug 'airblade/vim-rooter'
+" Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && npx --yes yarn install' }
 Plug 'mattn/vim-sl'
 Plug 'scrooloose/nerdtree'
 Plug 'sjl/badwolf'
@@ -220,6 +222,9 @@ nnoremap : ;
 " inotifyでコードを監視するときに、そのままだとMOVE_SELFイベントが走ってしまい、変更が検知できないが、それを防ぐ設定
 set nowritebackup
 set backupcopy=yes
+
+" MarkdownPreview
+let g:mkdp_theme = 'light' " or 'dark'
 
 """ copilot """
 inoremap <silent><script><expr> <C-i> copilot#Accept("\<CR>")
