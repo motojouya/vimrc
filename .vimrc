@@ -47,6 +47,9 @@ Plug 'mattn/vim-starwars'
 Plug 'vim-scripts/taglist.vim'
 call plug#end()
 
+" editorconfig
+packadd! editorconfig
+
 """ colorscheme """
 " colorscheme molokai
 " colorscheme lucario
@@ -127,6 +130,18 @@ let g:lsp_inlay_hints_enabled = 0
 "         \ 'whitelist': ['php'],
 "         \ })
 " endif
+augroup LspGo
+  au!
+  autocmd User lsp_setup call lsp#register_server({
+      \ 'name': 'gopls',
+      \ 'cmd': {server_info->['gopls']},
+      \ 'whitelist': ['go'],
+      \ })
+  autocmd FileType go setlocal omnifunc=lsp#complete
+  "autocmd FileType go nmap <buffer> gd <plug>(lsp-definition)
+  "autocmd FileType go nmap <buffer> ,n <plug>(lsp-next-error)
+  "autocmd FileType go nmap <buffer> ,p <plug>(lsp-previous-error)
+augroup END
 
 """ ALE """
 " phpも記載すべき
