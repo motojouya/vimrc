@@ -181,6 +181,11 @@ augroup MyXML
   autocmd Filetype tsx inoremap <buffer> </ </<C-x><C-o>
 augroup END
 
+autocmd BufReadPost *
+      \ if line("'\"") >= 1 && line("'\"") <= line("$")
+      \ |   exe "normal! g`\""
+      \ | endif
+
 """ 表示 """
 set nowrap " 長い行を折り返さない
 set textwidth=0 " テキストの折り返し幅は0
